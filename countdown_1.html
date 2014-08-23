@@ -1,0 +1,54 @@
+<html> 
+<head>
+<script type="text/javascript">
+var countdownnumber=3;
+var countdownnumber2=9;
+var countdownid,countdownid2;
+function initial(){ 
+countdownfunc();
+ countdownfunc2();
+ }
+function countdownfunc(){
+ var x=document.getElementById("countdown");
+ x.innerHTML=countdownnumber;
+ if (countdownnumber==-1){ 
+  x.innerHTML=0;
+  clearTimeout(countdownid);
+  clearTimeout(countdownid2);
+
+   alert("倒數結束");
+ }else{
+  countdownnumber--;
+  if(countdownid){
+   clearTimeout(countdownid);
+  }
+  countdownid=setTimeout(countdownfunc,10000);
+ }
+}
+function countdownfunc2(){
+ var y =document.getElementById("countdown2");
+ y.innerHTML=countdownnumber2;
+ if (countdownnumber2==0){ 
+	countdownnumber2 =10;
+ }
+  countdownnumber2--;
+ if(countdownid2){
+   clearTimeout(countdownid2);
+  }
+  countdownid2=setTimeout(countdownfunc2,1000);
+ 
+}
+
+ </script>
+ </head>
+ <body onload="initial();">
+<p>倒數時間:</p>
+<table>
+<tr>
+<td><div id="countdown"> </div> </td>
+<td><div id="countdown0">.</div></td>
+<td><div id="countdown2"></div></td>
+</tr>
+</table>
+</body>
+</html>

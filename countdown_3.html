@@ -1,0 +1,48 @@
+<html> 
+<head>
+<script type="text/javascript">
+var countdownnumber=4;
+var countdownnumbers = 9;
+var countdownid,x;
+function initial(){
+  x=document.getElementById("countdown");
+  xs = document.getElementById("countdown2");
+
+  x.innerHTML=countdownnumber;
+  xs.innerHTML=countdownnumbers;
+
+  //countdownnumber--;
+  countdownnumbers--;
+  countdownid=window.setInterval(countdownfunc,1000);
+}
+function countdownfunc(){ 
+  x.innerHTML=countdownnumber;
+  xs.innerHTML=countdownnumbers;
+  if (countdownnumbers == 0){
+  	if(countdownnumber == 0)
+  	{
+  		alert("倒數結束");
+    	clearInterval(countdownid);
+  	}else{
+  		countdownnumber--;
+  		countdownnumbers = 10;
+  	}
+  	
+    //alert("倒數結束");
+    //clearInterval(countdownid);
+  }
+  countdownnumbers--;
+}
+</script>
+</head> 
+<body onload="initial();"> 
+<p>倒數時間:</p>
+<table>
+<tr>
+<td><div id="countdown"> </div> </td>
+<td><div id="countdown0">.</div></td>
+<td><div id="countdown2"></div></td>
+</tr>
+</table>
+</body> 
+</html>
